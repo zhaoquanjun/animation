@@ -1,0 +1,136 @@
+@import '../common.scss';
+.animation-wrapper {
+  .style {
+    .circle {
+      border-radius: 50%;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      transition: all .3s ease-in-out;
+    }
+
+    .mask {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      flex-wrap: wrap;
+      color: #eee;
+      background-color: rgba(0, 0, 0, .5);
+      opacity: 0;
+      transition: all .3s ease-in-out;
+
+      h2, p {
+        padding: 0 24px;
+        width: 100%;
+        text-align: center;
+      }
+
+      h2 {
+        padding-bottom: 16px;
+      }
+    }
+  }
+
+  .style1 {
+    .mask {
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      .mask {
+        opacity: 1;
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .style2 {
+    .mask {
+      top: 100%;
+      left: 0;
+    }
+
+    &:hover {
+      .mask {
+        top: 0;
+        opacity: 1;
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .style3 {
+    .mask {
+      top: 100%;
+      left: 0;
+    }
+
+    &:hover {
+      .mask {
+        top: 0;
+        opacity: 1;
+        transform: rotate(-360deg);
+      }
+      img {
+        transform: scale(1.1);
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .style4 {
+    .mask {
+      top: 0;
+      left: -100%;
+    }
+
+    &:hover {
+      .mask {
+        top: 0;
+        left: 0;
+        opacity: 1;
+        transform: rotate(360deg) scale(.8);
+      }
+      img {
+        margin-left: 20%;
+        transform: rotate(-360deg) scale(.4);
+      }
+    }
+  }
+  .style5 {
+    .mask {
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      .mask {
+        opacity: 1;
+        background: linear-gradient(to right bottom, #f6b26b, #e06666, #ffd966);
+      }
+    }
+  }
+  .style6 {
+    .mask {
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      .mask {
+        opacity: 1;
+        background: linear-gradient(to right bottom, #f6b26b, #e06666, #ffd966);
+      }
+    }
+  }
+}

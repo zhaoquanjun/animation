@@ -1,0 +1,304 @@
+@import '../common.scss';
+.animation-wrapper {
+  .style {
+    text-align: center;
+    .button {
+      position: relative;
+      display: inline-block;
+      padding: 8px 32px;
+      min-width: 120px;
+      font-size: 14px;
+      color: #333;
+      background: #eee;
+      border: 1px solid #d7d8d9;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+
+      i {
+        vertical-align: middle;
+      }
+
+      i {
+        font-size: 14px;
+        color: #333;
+      }
+    }
+  }
+  .style1 {
+    .button.ani-scale {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  .style2 {
+    .button.ani-topmove {
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+  }
+
+  .style3 {
+    .button.ani-rotate {
+      &:hover {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .style4 {
+    .button.ani-leftmove {
+      &:hover {
+        margin-left: -16px;
+      }
+    }
+  }
+
+  .style5 {
+    .button.ani-colorful {
+      &:hover {
+        color: #fff;
+        border-color: #4dadf7;
+        background-color: #4dadf7;
+      }
+    }
+  }
+
+  .style6 {
+    .button.ani-bombg {
+      transform: perspective(1px) translateZ(0);
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 0;
+        background-color: #fff;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        color: #fff;
+        border-color: #4dadf7;
+        &::before {
+          position: absolute;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 100%;
+          background-color: #4dadf7;
+        }
+      }
+    }
+  }
+
+  .style7 {
+    .button.ani-slidebg {
+      transform: perspective(1px) translateZ(0);
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        content: '';
+        width: 0;
+        height: 100%;
+        background-color: #fff;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+      }
+      &::after {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: block;
+        content: '';
+        width: 0;
+        height: 100%;
+        background-color: #fff;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        color: #fff;
+        border-color: #4dadf7;
+        &::before {
+          position: absolute;
+          display: block;
+          content: '';
+          width: 50%;
+          background-color: #4dadf7;
+        }
+        &::after {
+          position: absolute;
+          display: block;
+          content: '';
+          width: 50%;
+          background-color: #4dadf7;
+        }
+      }
+    }
+  }
+
+  .style8 {
+    .button.ani-iconmove {
+      i {
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        i {
+          transform: translateX(-8px);
+        }
+      }
+    }
+  }
+
+  .style9 {
+    .button.ani-iconrotate {
+      i {
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        i {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  .style10 {
+    .button.ani-iconscale {
+      i {
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        i {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+
+  .style11 {
+    .button.ani-bomshadow {
+      position: relative;
+      &::before {
+        position: absolute;
+        top: 100%;
+        left: 5%;
+        display: block;
+        content: '';
+        width: 90%;
+        height: 10px;
+        z-index: -1;
+        opacity: 0;
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+        transition: all .3s linear;
+      }
+      &:hover {
+        transform: translateY(-5px);
+        &::before {
+          opacity: 1;
+          transform: translateY(5px);
+        }
+      }
+    }
+  }
+
+  .style12 {
+    .button.ani-bomborder {
+      position: relative;
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 0;
+        height: 3px;
+        content: '';
+        background-color: #4dadf7;
+        transition: all .3s linear;
+      }
+      
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .style16 {
+    .use-plus {
+      animation: plus 1s linear infinite;
+    }
+
+    .use-buzz {
+      animation: buzz 0.2s linear infinite;
+    }
+
+    .use-wobble {
+      animation: wobble .5s ease-in;
+    }
+
+    @keyframes plus {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes buzz {
+      0% {
+        transform: translateX(0) rotate(0);
+      }
+      25% {
+        transform: translateX(-3px) rotate(-3deg);
+      }
+      50% {
+        transform: translateX(0) rotate(0);
+      }
+      75% {
+        transform: translateX(3px) rotate(3deg);
+      }
+      100% {
+        transform: translateX(0) rotate(0);
+      }
+    }
+
+    @keyframes wobble {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      20% {
+        transform: translate3d(8px, -8px, 0);
+      }
+      40% {
+        transform: translate3d(-8px, 8px, 0);
+      }
+      60% {
+        transform: translate3d(4px, -4px, 0);
+      }
+      80% {
+        transform: translate3d(-4px, 4px, 0);
+      }
+      90% {
+        transform: translate3d(2px, -2px, 0);
+      }
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}

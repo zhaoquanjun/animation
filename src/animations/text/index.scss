@@ -1,0 +1,93 @@
+@import '../common.scss';
+.animation-wrapper {
+  .style {
+    p {
+      font-size: 14px;
+      color: #262626;
+    }
+  }
+
+  .style1 {
+    p.ani-colorful {
+      &:hover {
+        color: #4dadf7;
+      }
+    }
+  }
+
+  .style2 {
+    p.ani-scale {
+      transition: all .3s linear;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .style3 {
+    p.ani-cenline {
+      position: relative;
+      &::before {
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        content: '';
+        width: 0;
+        height: 2px;
+        transition: all .3s linear;
+        background-color: #4dadf7;
+      }
+
+      &::after {
+        position: absolute;
+        bottom: -4px;
+        right: 50%;
+        transform: translateX(-50%);
+        display: block;
+        content: '';
+        width: 0;
+        height: 2px;
+        transition: all .3s linear;
+        background-color: #4dadf7;
+      }
+      
+      &:hover {
+        &::before {
+          width: 50%;
+          left: 0;
+          transform: translateX(0);
+        }
+        &::after {
+          width: 50%;
+          right: 0;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  .style4 {
+    p.ani-leftline {
+      position: relative;
+      &::before {
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        display: block;
+        content: '';
+        width: 0;
+        height: 2px;
+        transition: all .3s linear;
+        background-color: #4dadf7;
+      }
+      
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -36,7 +36,7 @@
     }
   }
 
-  .style1 {
+  .ani-scale-cen {
     .mask {
       top: 0;
       left: 0;
@@ -52,7 +52,7 @@
     }
   }
 
-  .style2 {
+  .ani-scale-bot {
     .mask {
       top: 100%;
       left: 0;
@@ -69,7 +69,7 @@
     }
   }
 
-  .style3 {
+  .ani-rotate-cen {
     .mask {
       top: 100%;
       left: 0;
@@ -88,7 +88,7 @@
     }
   }
 
-  .style4 {
+  .ani-rotate-le {
     .mask {
       top: 0;
       left: -100%;
@@ -107,7 +107,7 @@
       }
     }
   }
-  .style5 {
+  .ani-cover-grad {
     .mask {
       top: 0;
       left: 0;
@@ -120,17 +120,18 @@
       }
     }
   }
-  .style6 {
-    .mask {
-      top: 0;
-      left: 0;
+  .ani-scale {
+    img {
+      transition: transform .3s ease-in-out;
     }
-
     &:hover {
-      .mask {
-        opacity: 1;
-        background: linear-gradient(to right bottom, #f6b26b, #e06666, #ffd966);
+      img {
+        transform: scale(1.2);
       }
     }
+  }
+  .ani-move-bymouse {
+    will-change: auto;
+    transform: perspective(300px) rotateX(0deg) rotateY(0deg);
   }
 }

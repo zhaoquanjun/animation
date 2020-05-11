@@ -12,7 +12,8 @@ const animate = (function ($) {
           options ? options : {}
         )
         this.control = this.params.id ? $('#' + this.params.id) : null
-        this.needsJs = ['', '']
+        this.needsJs = ['', ''];
+        this.isMoreDeal = ['', '']
       }
 
       _init() {
@@ -20,42 +21,26 @@ const animate = (function ($) {
       }
 
       _doBindEvent() {
-        if (this.indexOf(this.params.eventName)) {
+        if (this.needsJs.indexOf(this.params.eventName)) {
           this._addEvent()
         }
       }
 
       _addEvent() {
-        if ([this.params.controlName + this.params.eventName]) {
-          [this.params.controlName + this.params.eventName]()
-        }
-      }
-
-      buttonScale() {
         this.control
           .on('mouseenter', () => {
             console.log('enter')
-            
+            this.control.addClass('ani-' + this.params.eventName)
           })
           .on('mousemove', () => {
             console.log('move')
+            if (this.isMoreDeal.indexOf(this.params.eventName)) {
+              [this.params.controlName + this.params.eventName]()
+            }
           })
           .on('mouseleave', () => {
             console.log('leave')
-          })
-      }
-
-      imagaScale() {
-        this.control
-          .on('mouseenter', () => {
-            console.log('enter')
-            
-          })
-          .on('mousemove', () => {
-            console.log('move')
-          })
-          .on('mouseleave', () => {
-            console.log('leave')
+            this.control.removeClass('ani-' + this.params.eventName)
           })
       }
     }

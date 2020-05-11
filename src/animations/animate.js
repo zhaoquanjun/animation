@@ -1,6 +1,5 @@
 const animate = (function ($) {
-
-  ani = options => {
+  ani = (options) => {
     class Aniamte {
       constructor(options) {
         this.name = 'animate'
@@ -10,56 +9,44 @@ const animate = (function ($) {
             color: 'skyblue',
             direction: 'left'
           },
-          (options ? options: {})
+          options ? options : {}
         )
-        this.control = this.params.id ? $('#' + this.params.id) : null;
+        this.control = this.params.id ? $('#' + this.params.id) : null
+        this.needsJs = ['', ''];
+        this.isMoreDeal = ['', '']
       }
-  
+
       _init() {
-        this._doBindEvent(this.params.eventName)
+        this._doBindEvent()
       }
-  
+
+      _doBindEvent() {
+        if (this.needsJs.indexOf(this.params.eventName)) {
+          this._addEvent()
+        }
+      }
+
       _addEvent() {
         this.control
           .on('mouseenter', () => {
             console.log('enter')
+            this.control.addClass('ani-' + this.params.eventName)
           })
           .on('mousemove', () => {
             console.log('move')
+            if (this.isMoreDeal.indexOf(this.params.eventName)) {
+              [this.params.controlName + this.params.eventName]()
+            }
           })
           .on('mouseleave', () => {
             console.log('leave')
+            this.control.removeClass('ani-' + this.params.eventName)
           })
       }
-  
-      _doBindEvent(eventName) {
-        return this[eventName + 'Animate']()
-      }
-  
-      buttonAnimate() {
-        switch (this.params.animateName) {
-          case '':
-            break
-          default:
-            break
-        }
-        this._addEvent()
-      }
-  
-      imageAnimate() {
-        switch (this.params.animateName) {
-          case '':
-            break
-          default:
-            break
-        }
-        this._addEvent()
-      }
     }
-  
+
     return new Aniamte(options)._init()
   }
 
-  return ani;
-  
+  return ani
 })($ || window.jQuery)

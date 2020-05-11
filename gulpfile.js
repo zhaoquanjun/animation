@@ -43,3 +43,39 @@ gulp.task('js', function (done) {
     .pipe(gulp.dest('./dist/js/'))
   done()
 })
+
+gulp.task('mincss', function(done) {
+  gulp
+    .src('./src/animations/index.scss')
+    .pipe(
+      sass({
+        outputStyle: 'compressed'
+      })
+    )
+    .on('error', sass.logError)
+    .pipe(
+      auto({
+        cascade: false
+      })
+    )
+    .pipe(
+      rename({
+        suffix: '.min'
+      })
+    )
+    .pipe(gulp.dest('./dist/animatecss/'))
+  done()
+})
+
+gulp.task('minjs', function(done) {
+  gulp.src('./src/animations/animate.js')
+  .pipe(babel())
+  .pipe(uglify())
+  .pipe(
+    rename({
+      suffix: '.min'
+    })
+  )
+  .pipe(gulp.dest('./dist/animatejs/'))
+  done()
+})

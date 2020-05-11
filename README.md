@@ -15,9 +15,9 @@ animation
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  cnpm i / npm i 
+2.  单独打包 gulp css /gulp js
+3.  综合打包 gulp mincss / gulp minjs
 
 #### 参与贡献
 

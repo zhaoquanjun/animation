@@ -1,6 +1,5 @@
 const animate = (function ($) {
-
-  ani = options => {
+  ani = (options) => {
     class Aniamte {
       constructor(options) {
         this.name = 'animate'
@@ -10,19 +9,33 @@ const animate = (function ($) {
             color: 'skyblue',
             direction: 'left'
           },
-          (options ? options: {})
+          options ? options : {}
         )
-        this.control = this.params.id ? $('#' + this.params.id) : null;
+        this.control = this.params.id ? $('#' + this.params.id) : null
+        this.needsJs = ['', '']
       }
-  
+
       _init() {
-        this._doBindEvent(this.params.eventName)
+        this._doBindEvent()
       }
-  
+
+      _doBindEvent() {
+        if (this.indexOf(this.params.eventName)) {
+          this._addEvent()
+        }
+      }
+
       _addEvent() {
+        if ([this.params.controlName + this.params.eventName]) {
+          [this.params.controlName + this.params.eventName]()
+        }
+      }
+
+      buttonScale() {
         this.control
           .on('mouseenter', () => {
             console.log('enter')
+            
           })
           .on('mousemove', () => {
             console.log('move')
@@ -31,35 +44,24 @@ const animate = (function ($) {
             console.log('leave')
           })
       }
-  
-      _doBindEvent(eventName) {
-        return this[eventName + 'Animate']()
-      }
-  
-      buttonAnimate() {
-        switch (this.params.animateName) {
-          case '':
-            break
-          default:
-            break
-        }
-        this._addEvent()
-      }
-  
-      imageAnimate() {
-        switch (this.params.animateName) {
-          case '':
-            break
-          default:
-            break
-        }
-        this._addEvent()
+
+      imagaScale() {
+        this.control
+          .on('mouseenter', () => {
+            console.log('enter')
+            
+          })
+          .on('mousemove', () => {
+            console.log('move')
+          })
+          .on('mouseleave', () => {
+            console.log('leave')
+          })
       }
     }
-  
+
     return new Aniamte(options)._init()
   }
 
-  return ani;
-  
+  return ani
 })($ || window.jQuery)

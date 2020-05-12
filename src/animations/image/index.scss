@@ -176,6 +176,9 @@
     -webkit-animation: circle .75s;
     animation: circle .75s;
   }
+  .ani-shadow:hover {
+    box-shadow: 0 1px 2px 0 rgba(60,54,54,0.3);
+  }
   .ani-move-bymouse {
     will-change: auto;
     transform: perspective(300px) rotateX(0deg) rotateY(0deg);

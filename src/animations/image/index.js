@@ -6,7 +6,7 @@ $(function() {
 
     // mouse move 
     $('.ani-move-bymouse').on('mouseenter', function() {
-      $(this).css({'will-change': 'transform'})
+      $(this).addClass('ani-mousemove')
     }).on('mousemove', function(e) {
       e.preventDefault();
       const selfW = $(this).width();
@@ -18,7 +18,8 @@ $(function() {
       const rotateY = -disX / (selfW / 2) * 10 + 'deg'
       $(this).css({transform: `perspective(300px) rotateX(${rotateX}) rotateY(${rotateY}) scale3d(1, 1, 1)`})
     }).on('mouseleave', function() {
-      $(this).css({'will-change': 'auto', transform: `rotateX(0deg) rotateY(0deg)`})
+      $(this).removeClass('ani-mousemove')
+      $(this).css({transform: `rotateX(0deg) rotateY(0deg)`})
     })
 
 

@@ -7,7 +7,6 @@ const animate = (function ($) {
         this.params = Object.assign(
           {
             id: '',
-            color: 'skyblue',
             direction: 'left',
             controlName: 'button',
             eventName: 'scale'
@@ -47,8 +46,8 @@ const animate = (function ($) {
             e.preventDefault()
             e.stopPropagation()
             this.control.removeClass('ani-' + this.params.eventName)
-            if (this[this.params.controlName + 'mouseleave']) {
-              this[this.params.controlName + 'mouseleave'].call(this.control)
+            if (this[this.params.controlName + 'Mouseleave']) {
+              this[this.params.controlName + 'Mouseleave'].call(this.control)
             }
           })
       }

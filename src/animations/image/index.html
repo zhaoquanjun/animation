@@ -11,7 +11,7 @@
   <h5 class="sub-title">CSS ONLY</h5>
   <ul class="animation-wrapper">
     <li>
-      <div class="style ani-scale-cen" id="imagetest">
+      <div class="style ani-scale-cen">
         <img src="../../assets/images/img-style5.jpg" alt="">
         <div class="mask">
           <h2>Buff created</h2>
@@ -79,7 +79,7 @@
   <h5 class="sub-title">JS AND CSS</h5>
   <ul class="animation-wrapper">
     <li>
-      <div class="style ani-move-bymouse">
+      <div class="style ani-move-bymouse" id="imagetest">
         <img src="../../assets/images/img-style6.jpg" alt="">
       </div>
     </li>
@@ -87,10 +87,10 @@
 </body>
 </html>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-<script src="../../../dist/js/image/index.min.js"></script>
+<!-- <script src="../../../dist/js/image/index.min.js"></script> -->
 <script src="../../../dist/animatejs/animate.min.js"></script>
 <script>
   $(function() {
-    animate({id: 'imagetest', eventName: 'Scale', controlName: 'button'})
+    animate({id: 'imagetest', eventName: 'Mousemove', controlName: 'image'})
   })
 </script>

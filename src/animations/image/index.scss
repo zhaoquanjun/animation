@@ -139,6 +139,9 @@
       }
     }
   }
+  .ani-mousemove {
+    will-change: transform;
+  }
   .ani-shine::before {
     position: absolute;
     top: 0;

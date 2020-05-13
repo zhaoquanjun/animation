@@ -1,31 +1,35 @@
 @import '../common.scss';
 .animation-wrapper {
   .style {
-    p {
-      font-size: 14px;
+    p > span {
+      font-size: 16px;
       color: #262626;
+      transition: all 0.3s ease-in-out;
     }
-  }
 
-  .style1 {
-    p.ani-colorful {
+    p.ani-colorful > span {
       &:hover {
         color: #4dadf7;
       }
     }
-  }
 
-  .style2 {
-    p.ani-scale {
-      transition: all .3s linear;
+    p.ani-scalebig > span {
+      display: inline-block;
+      transition: all 0.3s linear;
       &:hover {
         transform: scale(1.2);
       }
     }
-  }
 
-  .style3 {
-    p.ani-cenline {
+    p.ani-scalesma > span {
+      display: inline-block;
+      transition: all 0.3s linear;
+      &:hover {
+        transform: scale(0.8);
+      }
+    }
+
+    p.ani-cenline > span {
       position: relative;
       &::before {
         position: absolute;
@@ -36,7 +40,7 @@
         content: '';
         width: 0;
         height: 2px;
-        transition: all .3s linear;
+        transition: all 0.3s linear;
         background-color: #4dadf7;
       }
 
@@ -49,10 +53,10 @@
         content: '';
         width: 0;
         height: 2px;
-        transition: all .3s linear;
+        transition: all 0.3s linear;
         background-color: #4dadf7;
       }
-      
+
       &:hover {
         &::before {
           width: 50%;
@@ -66,10 +70,8 @@
         }
       }
     }
-  }
 
-  .style4 {
-    p.ani-leftline {
+    p.ani-leftline > span {
       position: relative;
       &::before {
         position: absolute;
@@ -79,20 +81,18 @@
         content: '';
         width: 0;
         height: 2px;
-        transition: all .3s linear;
+        transition: all 0.3s linear;
         background-color: #4dadf7;
       }
-      
+
       &:hover {
         &::before {
           width: 100%;
         }
       }
     }
-  }
 
-  .style5 {
-    p.ani-tbline {
+    p.ani-tbline > span {
       position: relative;
       &::before {
         position: absolute;
@@ -102,7 +102,7 @@
         content: '';
         width: 0;
         height: 2px;
-        transition: all .3s linear;
+        transition: all 0.3s linear;
         background-color: #4dadf7;
       }
 
@@ -114,14 +114,93 @@
         content: '';
         width: 0;
         height: 2px;
-        transition: all .3s linear;
+        transition: all 0.3s linear;
         background-color: #4dadf7;
       }
-      
+
       &:hover {
-        &::before, &::after {
+        &::before,
+        &::after {
           width: 100%;
         }
+      }
+    }
+
+    p.ani-shadowbot > span {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 100%;
+        left: 5%;
+        display: block;
+        content: '';
+        width: 90%;
+        height: 10px;
+        z-index: -1;
+        opacity: 0;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 0.35) 0%,
+          rgba(0, 0, 0, 0) 80%
+        );
+        transition: all 0.3s linear;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+
+        &::before {
+          opacity: 1;
+          transform: translateY(5px);
+        }
+      }
+    }
+
+    p.ani-shadow3d > span {
+      &:hover {
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
+          0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+          0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+          0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    p.ani-neon > span {
+      font-size: 30px;
+      font-weight: bold;
+      &:hover {
+        color: rgb(40, 80, 120);
+        text-shadow: 0 0 1px currentColor, 2px 0 1px #083058, 0 2px 1px #98c0e8,
+          2px 1px 1px #083058, 1px 2px 1px #98c0e8, 2px 2px 1px #487098,
+          3px 1px 1px #083058, 1px 3px 1px #98c0e8, 3px 2px 1px #083058,
+          2px 3px 1px #98c0e8, 3px 3px 1px #487098, 4px 2px 1px #083058,
+          2px 4px 1px #98c0e8, 4px 3px 1px #083058, 3px 4px 1px #98c0e8,
+          4px 4px 1px #487098, 5px 3px 1px #083058, 3px 5px 1px #98c0e8,
+          5px 4px 1px #083058, 4px 5px 1px #98c0e8, 5px 5px 1px #487098;
+
+        &::before {
+          color: rgb(40, 80, 120);
+          text-shadow: 0 0 1px currentColor, -1px -1px 1px #003, 0 -1px 1px #003,
+            1px -1px 1px #003, 1px 0 1px #003, 1px 1px 1px #003, 0 1px 1px #003,
+            -1px 1px 1px #003, -1px 0 1px #003;
+        }
+
+        &::after {
+          color: rgba(40, 80, 120, 0.1);
+          text-shadow: 1px -1px 1px rgba(40, 80, 120, 0.8),
+            -1px 1px 1px rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+
+    p.ani-gradient > span {
+      &:hover {
+        font-weight: bold;
+        color: orange;
+        text-shadow: 0 0 1px currentColor, -1px -1px 1px #030, 0 -1px 1px #030,
+          1px -1px 1px #030, 1px 0 1px #030, 1px 1px 1px #030, 0 1px 1px #030,
+          -1px 1px 1px #030, -1px 0 1px #030;
       }
     }
   }

@@ -7,7 +7,6 @@ const animate = (function ($) {
         this.params = Object.assign(
           {
             id: '',
-            direction: 'left',
             controlName: 'button',
             eventName: 'scale'
           },

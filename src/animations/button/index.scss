@@ -1,7 +1,9 @@
 @import '../common.scss';
+
 .animation-wrapper {
   .style {
     text-align: center;
+
     .button {
       position: relative;
       display: inline-block;
@@ -24,6 +26,7 @@
       }
     }
   }
+
   .style1 {
     .button.ani-scale {
       &:hover {
@@ -31,6 +34,7 @@
       }
     }
   }
+
   .style2 {
     .button.ani-topmove {
       &:hover {
@@ -68,6 +72,7 @@
   .style6 {
     .button.ani-bombg {
       transform: perspective(1px) translateZ(0);
+
       &::before {
         position: absolute;
         bottom: 0;
@@ -80,9 +85,11 @@
         z-index: -1;
         transition: all 0.3s ease-in-out;
       }
+
       &:hover {
         color: #fff;
         border-color: #4dadf7;
+
         &::before {
           position: absolute;
           display: block;
@@ -98,6 +105,7 @@
   .style7 {
     .button.ani-slidebg {
       transform: perspective(1px) translateZ(0);
+
       &::before {
         position: absolute;
         bottom: 0;
@@ -110,6 +118,7 @@
         z-index: -1;
         transition: all 0.3s ease-in-out;
       }
+
       &::after {
         position: absolute;
         bottom: 0;
@@ -122,9 +131,11 @@
         z-index: -1;
         transition: all 0.3s ease-in-out;
       }
+
       &:hover {
         color: #fff;
         border-color: #4dadf7;
+
         &::before {
           position: absolute;
           display: block;
@@ -132,6 +143,7 @@
           width: 50%;
           background-color: #4dadf7;
         }
+
         &::after {
           position: absolute;
           display: block;
@@ -149,6 +161,7 @@
         display: inline-block;
         transition: all 0.3s ease-in-out;
       }
+
       &:hover {
         i {
           transform: translateX(-8px);
@@ -163,6 +176,7 @@
         display: inline-block;
         transition: all 0.3s ease-in-out;
       }
+
       &:hover {
         i {
           transform: rotate(360deg);
@@ -177,6 +191,7 @@
         display: inline-block;
         transition: all 0.3s ease-in-out;
       }
+
       &:hover {
         i {
           transform: scale(1.3);
@@ -188,6 +203,7 @@
   .style11 {
     .button.ani-bomshadow {
       position: relative;
+
       &::before {
         position: absolute;
         top: 100%;
@@ -201,8 +217,10 @@
         background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
         transition: all .3s linear;
       }
+
       &:hover {
         transform: translateY(-5px);
+
         &::before {
           opacity: 1;
           transform: translateY(5px);
@@ -214,6 +232,7 @@
   .style12 {
     .button.ani-bomborder {
       position: relative;
+
       &::before {
         position: absolute;
         bottom: 0;
@@ -225,7 +244,7 @@
         background-color: #4dadf7;
         transition: all .3s linear;
       }
-      
+
       &:hover {
         &::before {
           width: 100%;
@@ -251,9 +270,11 @@
       0% {
         transform: scale(1);
       }
+
       50% {
         transform: scale(1.2);
       }
+
       100% {
         transform: scale(1);
       }
@@ -263,15 +284,19 @@
       0% {
         transform: translateX(0) rotate(0);
       }
+
       25% {
         transform: translateX(-3px) rotate(-3deg);
       }
+
       50% {
         transform: translateX(0) rotate(0);
       }
+
       75% {
         transform: translateX(3px) rotate(3deg);
       }
+
       100% {
         transform: translateX(0) rotate(0);
       }
@@ -281,24 +306,96 @@
       0% {
         transform: translate3d(0, 0, 0);
       }
+
       20% {
         transform: translate3d(8px, -8px, 0);
       }
+
       40% {
         transform: translate3d(-8px, 8px, 0);
       }
+
       60% {
         transform: translate3d(4px, -4px, 0);
       }
+
       80% {
         transform: translate3d(-4px, 4px, 0);
       }
+
       90% {
         transform: translate3d(2px, -2px, 0);
       }
+
       100% {
         transform: translate3d(0, 0, 0);
       }
     }
   }
+
+  /* --------------------2D Transitions begin-------------------------- */
+  .hvr-grow:hover {
+    transform: scale(1.1);
+  }
+
+  .hvr-shrink:hover {
+    transform: scale(0.9);
+  }
+
+  .hvr-float:hover {
+    transform: translateY(-8px)
+  }
+
+  .hvr-sink:hover {
+    transform: translateY(8px);
+  }
+
+  .hvr-forward:hover {
+    transform: translateX(8px);
+  }
+
+  .hvr-backward:hover {
+    transform: translateX(-8px);
+  }
+
+  /* --------------------2D Transitions end-------------------------- */
+
+  /* --------------------Background Transitions begin-------------------------- */
+  .hvr-sweep-to-right {
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+  
+  }
+  .hvr-sweep-to-left {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+  .hvr-sweep-to-right:hover {
+    color: #fff;
+  }
+
+  .hvr-sweep-to-right:hover:before {
+    transform: scaleX(1);
+  }
+
+  .hvr-sweep-to-right:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2098D1;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition:transform 0.3s ease-out;
+  }
+
+  /* --------------------Background Transitions end-------------------------- */
 }

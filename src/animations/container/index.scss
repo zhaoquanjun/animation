@@ -1,0 +1,248 @@
+@import '../common.scss';
+
+.animation-wrapper {
+  .container {
+    position: relative;
+    height: 160px;
+
+    .smAreaC {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #eee;
+      pointer-events: none;
+      /***/
+      text-align: center;
+      line-height: 160px;
+    }
+
+    .hoverArea {
+      background-color: #e1e1e1;
+      transition: all .3s ease-in-out;
+    }
+
+    // ---------------------- 第二个动画 start --------------------------
+    .ani-entertop {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    .ani-enterright {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+
+    .ani-enterbottom {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    .ani-enterleft {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    .ani-enterfade {
+      opacity: 0;
+    }
+
+    .ani-bombout {
+      z-index: 1;
+      transition: all .3s ease-in-out;
+    }
+
+    .ani-enterflipT {
+      opacity: 0;
+      opacity: 0;
+      transform-origin: 50% 0;
+      transform: perspective(900px) rotateX(180deg);
+    }
+
+    .ani-enterflipR {
+      opacity: 0;
+      opacity: 0;
+      transform-origin: 100% 50%;
+      transform: perspective(900px) rotateY(180deg);
+    }
+
+    .ani-enterflipB {
+      opacity: 0;
+      opacity: 0;
+      transform-origin: 50% 100%;
+      transform: perspective(900px) rotateX(-180deg);
+    }
+
+    .ani-enterflipL {
+      opacity: 0;
+      opacity: 0;
+      transform-origin: 0 50%;
+      transform: perspective(900px) rotateY(-180deg);
+    }
+
+    // ---------------------- 第二个动画 end ----------------------
+
+    // ---------------------- 第一个动画 start --------------------
+    .ani-leavetl {
+      z-index: 1;
+      transform-origin: 0 0;
+      transition: transform .5s ease-in-out;
+    }
+
+    .ani-leavetr {
+      z-index: 1;
+      transform-origin: 100% 0;
+      transition: transform .5s ease-in-out;
+    }
+
+    .ani-leavebl {
+      z-index: 1;
+      transform-origin: 0 100%;
+      transition: transform .5s ease-in-out;
+    }
+
+    .ani-leavebr {
+      z-index: 1;
+      transform-origin: 100% 100%;
+      transition: transform .5s ease-in-out;
+    }
+
+    .ani-leavecen {
+      z-index: 1;
+      backface-visibility: visible;
+      transition: transform .5s ease-in-out;
+    }
+
+    .ani-leaveout {
+      z-index: 1;
+      backface-visibility: visible;
+      transition: transform .5s ease-in-out;
+    }
+
+
+    // ---------------------- 第二个动画 end ----------------------
+
+    &:hover {
+      .ani-entertop, .ani-enterbottom {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .ani-enterright, .ani-enterleft {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .ani-enterfade {
+        opacity: 1;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .ani-bombout {
+        transform: scale(2);
+        opacity: 0;
+      }
+
+      .ani-enterflipT {
+        opacity: 1;
+        transform: perspective(900px) rotateX(0);
+        transition: all 1s ease-in-out;
+      }
+
+      .ani-enterflipR {
+        opacity: 1;
+        transform: perspective(900px) rotateY(0);
+        transition: all 1s ease-in-out;
+      }
+
+      .ani-enterflipB {
+        opacity: 1;
+        transform: perspective(900px) rotateX(0);
+        transition: all 1s ease-in-out;
+      }
+
+      .ani-enterflipL {
+        opacity: 1;
+        transform: perspective(900px) rotateY(0);
+        transition: all 1s ease-in-out;
+      }
+
+      .ani-leavetl {
+        transform: rotate(-180deg);
+      }
+
+      .ani-leavetr {
+        transform: rotate(180deg);
+      }
+
+      .ani-leavebl {
+        transform: rotate(180deg);
+      }
+
+      .ani-leavebr {
+        transform: rotate(-180deg);
+      }
+
+      .ani-leavecen {
+        opacity: 0;
+        animation: ladderin .5s ease-in-out;
+      }
+
+      .ani-leaveout {
+        animation: bombout 1s both;
+      }
+
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        z-index: -1;
+      }
+      40% {
+        opacity: 1;
+        z-index: 1;
+        transform: scale(1.2);
+      }
+      100% {
+        opacity: 1;
+        z-index: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes ladderin {
+      0% {
+        opacity: 1;
+        transform-origin: 0 0;
+        transform: perspective(800px) rotate(0) translateZ(0);
+      }
+      100% {
+        opacity: 0;
+        transform-origin: 50% 0;
+        transform: perspective(800px) rotateY(180deg) translateZ(300px);
+      }
+    }
+
+    @keyframes bombout {
+      0% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: rotate(0);
+      }
+      50% {
+        opacity: 1;
+        transform-origin: 200% 50%;
+        transform: rotate(160deg);
+      }
+      100% {
+        opacity: 0;
+        transform-origin: 200% 50%;
+        transform: rotate(160deg);
+      }
+    }
+  }
+
+  
+}

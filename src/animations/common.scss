@@ -67,3 +67,11 @@ li {
 .bordered {
   border-bottom: 1px dashed #d7d8d9;
 }
+
+.clearfix::after {
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
